@@ -1,0 +1,60 @@
+<aside id="left-panel">
+
+    <!-- User info -->
+    <!-- <sa-login-info></sa-login-info> -->
+    <!-- end user info -->
+    <div class="login-info">
+        <span *ngIf="true">
+            <a>
+                <img src="../../../content/img/avatars/sampleBoy.png" alt="me" class="online" />
+                <span>User</span>
+                <i class="fa fa-angle-down"></i>
+            </a>
+        </span>
+    </div>
+
+
+
+
+    <nav>
+        <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+    Please note that these links work a bit different than
+    traditional href="" links. See documentation for details.
+    -->
+
+        <ul saSmartMenu>
+
+            <li routerLinkActive="active">
+                <a routerLink="/home" title="Home">
+                    <i class="fa fa-lg fa-fw fa-home"></i>
+                    <span class="menu-item-parent">Home</span>
+                </a>
+            </li>
+
+            <li *ngFor="let menuItem of menuItems">
+                <a *ngIf="menuItem.childs?.length > 0" title="menuItem.topic">
+                    <i [class]="menuItem.icon"></i>
+                    <span class="menu-item-parent">{{menuItem.topic}}</span>
+                </a>
+                <!-- <a title="menuItem.topic"> -->
+                <a *ngIf="menuItem.childs?.length == 0"  [routerLink]="menuItem.url" title="menuItem.topic">
+                    <i [class]="menuItem.icon"></i>
+                    <span class="menu-item-parent">{{menuItem.topic}}</span>
+                </a>
+
+                <ul *ngIf="menuItem.childs?.length > 0">
+                    <li *ngFor="let subMenu of menuItem.childs">
+                        <a [routerLink]="subMenu.url" title="subMenu.topic">
+                            <i [class]="subMenu.icon"></i>
+                            {{subMenu.topic}}</a>
+                    </li>
+                </ul>
+
+            </li>
+
+        </ul>
+    </nav>
+
+    <sa-minify-menu></sa-minify-menu>
+
+</aside>

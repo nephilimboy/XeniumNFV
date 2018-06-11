@@ -1,0 +1,50 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="amir (generated)" id="1516557564499-1">
+        <createTable tableName="jhi_networkcard">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_networkcardPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TINYBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="TINYBLOB"/>
+            <column name="ipaddress" type="VARCHAR(100)"/>
+            <column name="macaddress" type="VARCHAR(100)"/>
+            <column name="name" type="VARCHAR(50)"/>
+            <column name="server_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="amir (generated)" id="1516557564499-2">
+        <createTable tableName="jhi_server">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_serverPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TINYBLOB">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="TINYBLOB"/>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="os" type="VARCHAR(50)"/>
+            <column name="status" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="amir (generated)" id="1516557564499-3">
+        <addUniqueConstraint columnNames="name" constraintName="UC_JHI_SERVERNAME_COL" tableName="jhi_server"/>
+    </changeSet>
+    <changeSet author="amir (generated)" id="1516557564499-4">
+        <addForeignKeyConstraint baseColumnNames="server_id" baseTableName="jhi_networkcard" constraintName="FK2we471j55xbgoo1qmcb2wrpxk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_server"/>
+    </changeSet>
+</databaseChangeLog>

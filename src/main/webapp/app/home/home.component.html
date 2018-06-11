@@ -1,0 +1,32 @@
+<div id="content">
+
+    <div class="row">
+        <!-- <sa-stats></sa-stats> -->
+
+        <!-- <input saKnob [size]="59" value="35"/> -->
+  </div>
+
+    </div>
+
+
+
+
+
+    <sa-widgets-grid>
+
+        <div class="row">
+            <article class="col-sm-12" *ngIf="serverStatusArr">
+                <div *ngFor="let serverStatus of serverStatusArr">
+                    <ng-container *ngIf="serverStatus"></ng-container>
+                </div>
+            </article>
+        </div>
+
+    </sa-widgets-grid>
+</div>
+
+
+
+<ng-template #xnetServerStatus>
+    <xnet-serverStatus></xnet-serverStatus>
+</ng-template>

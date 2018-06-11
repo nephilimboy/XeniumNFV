@@ -1,0 +1,358 @@
+<div id="main" role="main" class="animated" style="margin-top: 5%; margin-left: 0px !important;background-color: #222D3A;">
+
+    <div id="content" class="" style="background-color: #222D3A;">
+        <div class="row">
+
+
+            <div class="col-xs-12 ">
+
+                <!--  <form class="smart-form client-form">
+                    <header style="font-size: 15px; text-align: center">
+                        <h1 class=" login-header-big" style="color: #22262e !important; font-size: 25px; font-weight: 700; line-height: 45px;">XenoNet </h1>
+
+                    </header>
+                    <fieldset>
+                        <section>
+                            <label class="label" style="font-size: 12px; text-align: right;">UserName</label>
+                            <label class="input">
+                                <i class="icon-append fa fa-user" style="color: #22262e !important"></i>
+                                <input type="text" id="username" name="username" [(ngModel)]="username" data-smart-validate-input="" data-required="" data-email=""
+                                    data-message-required="Please enter your email address" data-message-email="Please enter a VALID email address">
+                                <b class="tooltip tooltip-top-right" style="font-size: 9px;">
+                                    <i class="fa fa-user txt-color-teal"></i>
+                                    type your username</b>
+                            </label>
+                        </section>
+                        <section>
+                            <label class="label" style="font-size: 12px; text-align: right;">Password</label>
+                            <label class="input">
+                                <i class="icon-append fa fa-lock" style="color: #22262e !important"></i>
+                                <input type="password" name="password" [(ngModel)]="password" data-smart-validate-input="" data-required="" data-minlength="3"
+                                    data-maxnlength="20" data-message="Please enter your email password">
+                                <b class="tooltip tooltip-top-right" style="font-size: 9px;">
+                                    <i class="fa fa-lock txt-color-teal"></i> type your Password</b>
+                            </label>
+                        </section>
+                        <section>
+                            <button type="submit" (click)="login()" class="btn btn-primary" style="font-size: 15px; width: 70px; display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;">
+                                LogIn
+                            </button>
+                        </section>
+
+                    </fieldset>
+                    <footer>
+
+
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3">
+                                <dl class="dl-horizontal text-sm" style="width: 125px;">
+                                    <dt style="width: 90px;">Version :&nbsp;</dt>
+                                    <dd class="text-right m-0" style="color: navy;">1.0.0</dd>
+                                </dl>
+                            </div>
+                            <div class="col-xs-6 col-sm-3">
+                                <dl class="dl-horizontal text-sm" style="width: 184px;">
+                                    <dt style="width: 116px;">Last Update:</dt>
+                                    <dd class="text-right m-0" style="color: navy;">18.1.18</dd>
+                                </dl>
+                            </div>
+
+                        </div>
+
+
+                    </footer>
+                </form>
+
+
+            </div>
+
+
+
+
+
+
+
+
+        </div> -->
+
+
+
+
+
+                <div class="container" id="login-block">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+
+                            <div class="login-box clearfix animated flipInY">
+                                <div class="page-icon animated bounceInDown">
+                                    <img src="../../../content/img/user-icon.png" alt="Key icon" />
+                                </div>
+                                <div class="login-logo">
+                                    <h1 class=" login-header-big" style="color: rgb(218, 216, 216) !important; font-size: 25px; font-weight: 700; line-height: 45px;"> XenoNet </h1>
+                                    <!-- <a href="#"><img src="img/login-logo.png" alt="Company Logo" /></a> -->
+                                </div>
+                                <hr />
+                                <div class="login-form">
+                                    <!-- Start Error box -->
+                                    <div class="alert alert-danger hide">
+                                        <button type="button" class="close" data-dismiss="alert"> &times;</button>
+                                        <h4>Error!</h4>
+                                        Your Error Message goes here
+                                    </div>
+                                    <!-- End Error box -->
+                                    <form (ngSubmit)="register()" #registerForm="ngForm"  >			        			
+                                        <input  id="login" name="login" type="text"  [(ngModel)]="registerAccount.login" #login="ngModel" placeholder="Name" class="input-field" required minlength="1" maxlength="50" pattern="^[_'.@A-Za-z0-9-]*$"/>
+                                        <div *ngIf="login.dirty && login.invalid" style="margin: 0px 53px 6px;
+                                        width: 77%;
+                                        color: #6c6c6c;">
+                                            <small class="form-text text-danger" *ngIf="login.errors.required">
+                                                Your username is required.
+                                            </small>
+                                            <small class="form-text text-danger" *ngIf="login.errors.minlength"
+                                                    >
+                                                Your username is required to be at least 1 character.
+                                            </small>
+                                            <small class="form-text text-danger" *ngIf="login.errors.maxlength"
+                                                    >
+                                                Your username cannot be longer than 50 characters.
+                                            </small>
+                                            <small class="form-text text-danger" *ngIf="login.errors.pattern"
+                                                   >
+                                                Your username can only contain lower-case letters and digits.
+                                            </small>
+                                        </div> 
+                                        <input id="email" name="email" type="email" placeholder="E-mail" #email="ngModel" class="input-field" [(ngModel)]="registerAccount.email" minlength=5 maxlength=100 email required/>
+                                        <div *ngIf="email.dirty && email.invalid" style="margin: 0px 53px 6px;
+                                        width: 77%;
+                                        color: #6c6c6c;">
+                                            <small class="form-text text-danger" *ngIf="email.errors.required"
+                                                    >
+                                                Your email is required.
+                                            </small>
+                                            <small class="form-text text-danger" *ngIf="email.errors.invalid"
+                                                   >
+                                                Your email is invalid.
+                                            </small>
+                                            <small class="form-text text-danger" *ngIf="email.errors.minlength"
+                                                   >
+                                                Your email is required to be at least 5 characters.
+                                            </small>
+                                            <small class="form-text text-danger" *ngIf="email.errors.maxlength"
+                                                   >
+                                                Your email cannot be longer than 100 characters.
+                                            </small>
+                                        </div> 
+                                        <input id="password" name="password"  type="password"  placeholder="Password"  class="input-field"  #password="ngModel" [(ngModel)]="registerAccount.password" minlength=4 maxlength=50 required/>
+                                        <div *ngIf="password.dirty && password.invalid" style="margin: 0px 53px 6px;
+                                        width: 77%;
+                                        color: #6c6c6c;">
+                                            <small class="form-text text-danger" *ngIf="password.errors.required"
+                                                    >
+                                                Your password is required.
+                                            </small>
+                                            <small class="form-text text-danger" *ngIf="password.errors.minlength"
+                                                    >
+                                                Your password is required to be at least 4 characters.
+                                            </small>
+                                            <small class="form-text text-danger" *ngIf="password.errors.maxlength"
+                                                    >
+                                                Your password cannot be longer than 50 characters.
+                                            </small>
+                                        </div>
+                                        <jhi-password-strength-bar [passwordToCheck]="registerAccount.password"></jhi-password-strength-bar> 
+
+                                        <input id="confirmPassword" name="confirmPassword" type="password"  placeholder="Confirm Password"  class="input-field"   #confirmPasswordInput="ngModel" [(ngModel)]="confirmPassword" minlength=4 maxlength=50 required>
+                                        <div *ngIf="confirmPasswordInput.dirty && confirmPasswordInput.invalid" style="margin: 0px 53px 6px;
+                                        width: 77%;
+                                        color: #6c6c6c;">
+                                            <small class="form-text text-danger" *ngIf="confirmPasswordInput.errors.required"
+                                                   >
+                                                Your confirmation password is required.
+                                            </small>
+                                            <small class="form-text text-danger" *ngIf="confirmPasswordInput.errors.minlength"
+                                                 >
+                                                Your confirmation password is required to be at least 4 characters.
+                                            </small>
+                                            <small class="form-text text-danger" *ngIf="confirmPasswordInput.errors.maxlength"
+                                                   >
+                                                Your confirmation password cannot be longer than 50 characters.
+                                            </small>
+                                        </div>
+                                        <!-- <label class="checkbox">
+                                        <input type="checkbox" value="option1" required> 
+                                        <span style="margin-left: 17px;">I agree to something I will never read</span>
+                                         </label> -->
+                                        <button type="submit"  [disabled]="registerForm.form.invalid" class="btn btn-login">Sign Up</button> 
+                                </form>	
+                                    <div class="login-links">
+                                        <a href="">
+                                            Forgot password?
+                                        </a>
+                                        <br />
+                                        <a routerLink="/auth/login">
+                                            Already have an account?  <strong>Sign In</strong>
+                                        </a>
+                                        <a href="">
+                                            By
+                                            <strong>AmirHossein Ghorab</strong>
+                                            Winter 2018
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div id="main" role="main" class="animated fadeInDown" style="margin-top: 5%;" >
+
+    <div id="content" class="">
+        <div class="row">
+
+
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-md-offset-2 col-lg-offset-2 ">
+
+                    <form class="smart-form client-form">
+                        <header style="font-size: 15px; text-align: center; background-color: #22262e !important">
+                            <h1 class=" login-header-big" style="color: whitesmoke; font-size: 25px; font-weight: 700; line-height: 45px;">XenoNet </h1>
+                        </header>
+                        <fieldset style="background-color: #22262e !important">
+                            <section>
+                                <label class="label" style="color: whitesmoke;font-size: 12px; text-align: right;">UserName</label>
+                                <label class="input"> <i class="icon-append fa fa-user"></i>
+                  <input type="text" id="username" name="username" [(ngModel)]="username" data-smart-validate-input="" data-required="" data-email="" data-message-required="Please enter your email address" data-message-email="Please enter a VALID email address">
+                  <b class="tooltip tooltip-top-right" style="font-size: 9px;"><i class="fa fa-user txt-color-teal"></i>
+                    type your username</b></label>
+                            </section>
+                            <section>
+                                <label class="label" style="color: whitesmoke;font-size: 12px; text-align: right;">Password</label>
+                                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                  <input type="password" name="password" [(ngModel)]="password" data-smart-validate-input="" data-required="" data-minlength="3" data-maxnlength="20" data-message="Please enter your email password">
+                  <b class="tooltip tooltip-top-right" style="font-size: 9px;"><i class="fa fa-lock txt-color-teal"></i> type your Password</b> </label>
+                            </section>
+                            
+
+
+                            <section>
+                                <button type="submit" (click)="login()" class="btn btn-primary" style="font-size: 15px; width: 70px; display: inline-block;
+                                padding: 6px 12px;
+                                margin-bottom: 0;
+                                font-size: 14px;
+                                font-weight: normal;
+                                line-height: 1.428571429;
+                                text-align: center;
+                                white-space: nowrap;
+                                vertical-align: middle;
+                                cursor: pointer;
+                                background-image: none;
+                                border: 1px solid transparent;
+                                border-radius: 4px;
+                                -webkit-user-select: none;
+                                -moz-user-select: none;
+                                -ms-user-select: none;
+                                -o-user-select: none;
+                                user-select: none;">
+                                LogIn
+                            </button>
+                            </section>
+
+                        </fieldset>
+                        <footer style="background-color: #22262e !important">
+
+
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-3">
+                                    <dl class="dl-horizontal text-sm" style="width: 125px;">
+                                        <dt style="color: whitesmoke;width: 90px;">Version :&nbsp;</dt>
+                                        <dd class="text-right m-0" style="color: whitesmoke;">1.0.0</dd>
+                                    </dl>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <dl class="dl-horizontal text-sm" style="width: 184px;">
+                                        <dt style="color: whitesmoke;width: 116px;">Last Update :&nbsp;</dt>
+                                        <dd class="text-right m-0" style="color: whitesmoke;">20.1.18</dd>
+                                    </dl>
+                                </div>
+                               
+                            </div>
+
+
+                        </footer>
+                    </form>
+
+
+                </div>
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+    </div>
+</div> -->

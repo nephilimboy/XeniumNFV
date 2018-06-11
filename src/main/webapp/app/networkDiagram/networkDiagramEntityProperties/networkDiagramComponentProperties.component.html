@@ -1,0 +1,59 @@
+<form class="" role="form" *ngIf="networkDiagramComponentProperties.name">
+
+    <fieldset>
+        <div class="well">
+            <div class="row">
+                <div class="checkbox" style="border-bottom: 1px dashed rgba(0,0,0,.2);padding-bottom: 10px">
+                    <label>
+                        <input name="isDedicatedRes" type="checkbox" #dedicatedResCheckBox class="checkbox" [(ngModel)]="networkDiagramComponentProperties.isDedicatedRes">
+                        <span>Dedicated Resources</span>
+                    </label>
+                </div>
+            </div>
+            <div class="row" [hidden]="!dedicatedResCheckBox.checked">
+                <div class="col-md-6 col-sm-6 ">
+                    <!-- <label class="col-md-2 control-label">CPU:</label> -->
+                    <div style="padding-left: 35%;">
+                        <input name="cpu" saKnob [size]="59"  [value]="networkDiagramComponentProperties.cpu"  (returnVal)="recievCpuFromKnob($event)"/>
+                        <!-- <input name="cpu" saKnob [size]="59"  [(ngModel)]="networkDiagramComponentProperties.cpu" /> -->
+                    </div>
+                    <span style="font-size: 10px !important; color: black;display: block;font-weight: 700;position: absolute;top: 100%;width: 100%;text-align: center;">CPU : (Core)</span>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <!-- <label class="col-md-2 control-label">RAM:</label> -->
+                    <div style="padding-left: 35%;">
+                        <input name="ram" saKnob [size]="59" [value]="networkDiagramComponentProperties.ram" (returnVal)="recievRamFromKnob($event)"/>
+                        <!-- <input name="ram" saKnob [size]="59" [(ngModel)]="networkDiagramComponentProperties.ram" /> -->
+                    </div>
+                    <span style="font-size: 10px !important; color: black;display: block;font-weight: 700;position: absolute;top: 100%;width: 100%;text-align: center;">RAM : (Gig)</span>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">Name:</label>
+            <div class="col-md-10">
+                <input name="name" class="form-control" placeholder="Component Name"  [(ngModel)]="networkDiagramComponentProperties.name" type="text">
+            </div>
+        </div>
+        <br/>
+        <br/>
+
+        <div class="form-group">
+            <label class="col-md-2 control-label">Ip:</label>
+            <div class="col-md-10">
+                <input name="ip" class="form-control" placeholder="Component Ip" [(ngModel)]="networkDiagramComponentProperties.ipAddress" type="text">
+            </div>
+        </div>
+        <br/>
+        <br/>
+
+        <button type="submit" (click)="applyChange()" class="btn btn-primary" style="background-color: #16a085;">
+            Apply
+        </button>
+    </fieldset>
+
+</form>

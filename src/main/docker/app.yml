@@ -1,0 +1,14 @@
+version: '2'
+services:
+    xenonet-app:
+        image: xenonet
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://xenonet-mysql:3306/xenonet?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - XNET_SLEEP=30 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    xenonet-mysql:
+        extends:
+            file: mysql.yml
+            service: xenonet-mysql

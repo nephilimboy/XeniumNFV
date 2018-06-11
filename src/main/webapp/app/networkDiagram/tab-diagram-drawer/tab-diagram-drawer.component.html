@@ -1,0 +1,197 @@
+<ng4-loading-spinner></ng4-loading-spinner>
+<div class="row" style="padding-top: 5px">
+    <div class="col-lg-12 col-sm-12 col-md-12">
+        <div class="well" style=" background-color: #e6e6e6;height: 44px;padding-top: 7px;">
+            <ul class="demo-btns">
+                <li>
+                    <!--<input type="file" (change)="loadDiagram($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">-->
+                    <label placement="top" tooltip="Upload xnet file to diagram" type="button"
+                           class="btn btn-sm  btn-block"
+                           style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <input  style="display: none" type="file" accept=".xnet" (change)="loadDiagram($event)" />
+                        <i class="fa fa-upload  fa-lg" style="color: white"></i>
+                        <i style="color: white"> Upload </i>
+                    </label>
+                </li>
+                <li>
+                    <button placement="top" tooltip="Upload All xnet to all diagram" type="button"
+                            class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-upload  fa-lg" style="color: white"></i>
+                        <i style="color: white"> Upload All </i>
+                    </button>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>
+                    <button placement="top" (click)="saveDiagram()" tooltip="Save" type="button"
+                            class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-save fa-lg" style="color: white"></i>
+                        <i style="color: white"> Save </i>
+                    </button>
+                </li>
+                <li>
+                    <button placement="top" tooltip="Save All" type="button" class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-save fa-lg" style="color: white"></i>
+                        <i style="color: white"> Save All </i>
+                    </button>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>
+                    <button placement="top" tooltip="Clear" (click)="clearDiagram()" type="button"
+                            class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-eraser fa-lg" style="color: white"></i>
+                        <i style="color: white"> Clear </i>
+                    </button>
+                </li>
+                <li>
+                    <button placement="top" tooltip="Clear All" type="button" class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-eraser fa-lg" style="color: white"></i>
+                        <i style="color: white"> Clear All </i>
+                    </button>
+                </li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>
+                    <button placement="top" tooltip="Deploy" (click)="deployDiagram()" type="button"
+                            class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-arrow-circle-down  fa-lg" style="color: white"></i>
+                        <i style="color: white"> Deploy </i>
+                    </button>
+                </li>
+                <li>
+                    <button placement="top" tooltip="Deploy All" type="button" class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-arrow-circle-down  fa-lg" style="color: white"></i>
+                        <i style="color: white"> Deploy All </i>
+                    </button>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>
+                    <button placement="top" (click)="removeDiagram()" tooltip="Remove" type="button" class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa  fa-trash-o  fa-lg" style="color: white"></i>
+                        <i style="color: white"> Remove </i>
+                    </button>
+                </li>
+                <li>
+                    <button placement="top" tooltip="Remove All" type="button" class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa  fa-trash-o  fa-lg" style="color: white"></i>
+                        <i style="color: white"> Remove All </i>
+                    </button>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+
+                <li>
+                    <button placement="top" tooltip="Zoom In" (click)="zoomIn()" type="button"
+                            class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-search-plus  fa-lg" style="color: white"></i>
+                        <i style="color: white"> Zoom In </i>
+                    </button>
+                </li>
+                <li>
+                    <button placement="top" tooltip="Zoom Out" (click)="zoomOut()" type="button"
+                            class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-search-minus fa-lg" style="color: white"></i>
+                        <i style="color: white"> Zoom Out </i>
+                    </button>
+                </li>
+                <li>
+                    <button placement="top" tooltip="Fit To Screen" (click)="fitToView()" type="button"
+                            class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-arrows-alt fa-lg" style="color: white"></i>
+                        <i style="color: white"> Fit </i>
+                    </button>
+                </li>
+
+
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>
+                    <button placement="top" tooltip="Undo" (click)="undo()" type="button" class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-mail-reply fa-lg" style="color: white"></i>
+                        <i style="color: white"> Undo </i>
+                    </button>
+                </li>
+                <li>
+                    <button placement="top" tooltip="Redo" type="button" (click)="redo()" class="btn btn-sm  btn-block"
+                            style=" border: 0px solid #16A085;background-color: #16A085 !important;">
+                        <i class="fa fa-mail-forward fa-lg" style="color: white"></i>
+                        <i style="color: white"> Redo </i>
+                    </button>
+                </li>
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="row" style="padding-top: 5px">
+
+    <div class="col-lg-9 col-sm-9 col-md-9">
+        <div *ngIf="server">
+            <div id="{{server.name}}" style="border: solid 1px black; width:100%; height:600px"></div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-3 col-sm-3 col-md-3">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12">
+                <div sa-widget [editbutton]="false" [togglebutton]="true" [fullscreenbutton]="false"
+                     [custombutton]="false"
+                     [sortable]="false">
+                    <header>
+                        <h2>
+                            <strong>Component Flavor</strong>
+                        </h2>
+
+                    </header>
+                    <div>
+                        <div class="widget-body">
+                            <Xnet-networkDiagramEntityPropertiesComponent
+                                [networkDiagramComponentProperties]="networkDiagramComponentProperties"
+                                (applyChangeToComponent)="applyChangeToComponent($event)"></Xnet-networkDiagramEntityPropertiesComponent>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+

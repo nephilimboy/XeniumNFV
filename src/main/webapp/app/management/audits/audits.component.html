@@ -1,0 +1,45 @@
+<div id="content">
+    <div *ngIf="audits">
+        <h2>Login History</h2>
+
+        <div class="table-responsive">
+            <table class="table table-condensed table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th (click)="orderProp = 'timestamp'; reverse=!reverse">
+                            <span>Date</span>
+                        </th>
+                        <th (click)="orderProp = 'principal'; reverse=!reverse">
+                            <span>User</span>
+                        </th>
+                        <th (click)="orderProp = 'type'; reverse=!reverse">
+                            <span>State</span>
+                        </th>
+                        <th (click)="orderProp = 'data.message'; reverse=!reverse">
+                            <span>Extra data</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tr *ngFor="let audit of getAudits()">
+                    <td>
+                        <span>{{audit.timestamp| date:'medium'}}</span>
+                    </td>
+                    <td>
+                        <small>{{audit.principal}}</small>
+                    </td>
+                    <td>{{audit.type}}</td>
+                    <td>
+                        <span *ngIf="audit.data" ng-show="audit.data.message">{{audit.data.message}}</span>
+                        <span *ngIf="audit.data" ng-show="audit.data.remoteAddress">
+                            <span>Remote Address</span> {{audit.data.remoteAddress}}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div *ngIf="audits">
+            <div class="row justify-content-center" style="margin-left: 47% !important;">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+    </div>
+</div>

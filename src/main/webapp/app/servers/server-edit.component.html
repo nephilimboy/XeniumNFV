@@ -1,0 +1,136 @@
+<form name="editForm" role="form" novalidate #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myUserLabel">
+            Create New Server</h4>
+        <button type="button" style="margin-top: -25px;" class="close" data-dismiss="modal" aria-hidden="true" (click)="clear()">&times;</button>
+    </div>
+    </div>
+    <div class="modal-body">
+
+        <div class="row">
+
+            <!-- NEW WIDGET START -->
+            <article class="col-sm-12 col-md-12 col-lg-6">
+                <fieldset>
+                    <legend>Server Statistics</legend>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Name:</label>
+                        <div class="col-md-10">
+                            <input name="name" class="form-control" placeholder="Server Name" type="text" [(ngModel)]="newServer.name">
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">OS:</label>
+                        <div class="col-md-10">
+                            <input name="os" class="form-control" placeholder="Server OS" type="text" [(ngModel)]="newServer.os">
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Status:</label>
+                        <div class="col-md-10">
+                            <input name="status" class="form-control" placeholder="Server Status" type="text" [(ngModel)]="newServer.status">
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Uname:</label>
+                        <div class="col-md-10">
+                            <input name="status" class="form-control" placeholder="SSH Username" type="text" [(ngModel)]="newServer.sshUsername">
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Pass:</label>
+                        <div class="col-md-10">
+                            <input name="status" class="form-control" placeholder="SSH Password" type="password" [(ngModel)]="newServer.sshPassword">
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+
+
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">Prime Nic:</label>
+                        <div class="col-md-3">
+                            <input name="name" class="form-control" placeholder="Name" type="text" [(ngModel)]="newPrimNetworkCard.name">
+                        </div>
+                        <div class="col-md-7">
+                            <input name="ipAddress" class="form-control" placeholder="IP" type="text" [(ngModel)]="newPrimNetworkCard.ipAddress">
+                        </div>
+                    </div>
+                    <br/>
+
+
+                    
+
+                    
+                </fieldset>
+
+            </article>
+
+
+            <article class="col-sm-12 col-md-12 col-lg-6">
+
+                <fieldset>
+                    <div class="row">
+                        <legend>Additional Server Network Cards
+
+                            <div class="btn btn-success" (click)="addNewRow()" style="cursor: pointer; margin-top: -12px;float: right;">
+                                <i class="button-icon fa fa-plus"></i>
+                            </div>
+                        </legend>
+                    </div>
+
+                    <form [formGroup]="networkCards" style="height:200px;overflow-y:auto">
+                        <div formArrayName="itemRows">
+                            <div *ngFor="let itemrow of networkCards.controls.itemRows.controls; let i=index" style="width: 90% !important; padding-left: 6% !important;"
+                                [formGroupName]="i">
+                                <div class="row">
+                                    <h5>Network Card #{{ i + 1 }}</h5>
+                                    <div *ngIf="networkCards.controls.itemRows.controls.length > 0" class="btn btn-danger" (click)="deleteRow(i)" style="cursor: pointer; margin-top: -30px;float: right;">
+                                        <i class="button-icon fa fa-minus"></i>
+                                    </div>
+                                </div>
+                                <!-- <span></span> -->
+                                <div class="form-group">
+                                    <label>Name:</label>
+                                    <input formControlName="itemname" class="form-control">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </form>
+
+
+                </fieldset>
+
+
+            </article>
+        </div>
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;
+            <span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary" (click)="save()">
+            <span class="fa fa-floppy-o"></span>&nbsp;
+            <span>Save</span>
+        </button>
+    </div>
+</form>

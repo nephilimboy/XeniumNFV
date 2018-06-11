@@ -1,0 +1,115 @@
+<div id="content">
+    <div class="row">
+        <!-- <sa-big-breadcrumbs [items]="['Home']" icon="home" class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></sa-big-breadcrumbs> -->
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="well">
+                <div sa-widget [editbutton]="false" [togglebutton]="true" [fullscreenbutton]="false" [custombutton]="false" [sortable]="false">
+                    <header>
+                        <!--<div class="widget-toolbar">-->
+                           <!---->
+                        <!--</div>-->
+
+
+                        <ul class="nav nav-tabs pull-left in">
+                            <li [class.active]="state.tabs.demo3=='hr1'">
+                                <a (click)="state.tabs.demo3 = 'hr1'">
+                                    <i class="fa fa-lg fa-briefcase "></i>
+                                    <span class="hidden-mobile hidden-tablet"> Switch </span>
+                                </a>
+                            </li>
+                            <li [class.active]="state.tabs.demo3=='hr2'">
+                                <a (click)="state.tabs.demo3 = 'hr2'">
+                                    <i class="fa fa-lg fa-briefcase "></i>
+                                    <span class="hidden-mobile hidden-tablet"> Virtual Function
+                                    </span>
+                                </a>
+                            </li>
+                            <li [class.active]="state.tabs.demo3=='hr3'">
+                                <a (click)="state.tabs.demo3 = 'hr3'">
+                                    <i class="fa fa-lg fa-briefcase "></i>
+                                    <span class="hidden-mobile hidden-tablet"> Host
+                                    </span>
+                                </a>
+                            </li>
+                            <li [class.active]="state.tabs.demo3=='hr4'">
+                                <a (click)="state.tabs.demo3 = 'hr4'">
+                                    <i class="fa fa-lg fa-briefcase "></i>
+                                    <span class="hidden-mobile hidden-tablet"> Controller
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </header>
+                    <div>
+                        <div class="widget-body">
+                            <tabset>
+                                <tab [active]="state.tabs.demo3 == 'hr1'">
+
+                                    <accessory-switch></accessory-switch>
+
+                                </tab>
+                                <tab [active]="state.tabs.demo3 == 'hr2'">
+                                    <accessory-vnf></accessory-vnf>
+                                </tab>
+                                <tab [active]="state.tabs.demo3 == 'hr3'">
+                                    <accessory-server></accessory-server>
+                                </tab>
+                                <tab [active]="state.tabs.demo3 == 'hr4'">
+                                    <accessory-controller></accessory-controller>
+                                </tab>
+                            </tabset>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="row">
+
+                    <!-- <button type="button" (click)="right1.toggle()">Toggle Left Over Aside</button> -->
+                    <!-- <aside-menu #right1 side="right" width="100px" isBackdrop="true" sideMode="push">
+                            <ul>
+                                <li>Homepage</li>
+                                <li>About</li>
+                                <li>Contact</li>
+                            </ul>
+                        </aside-menu> -->
+                    <!-- <div class="col-sm-6 ol-md-6"> -->
+
+                    <tabs-diagram>
+                        <tab-diagram [tabTitle]="'OverView'">
+                            <ng-container *ngIf="servers">
+                                <diagram-overView [servers]="servers" #diagramOverView></diagram-overView>
+                            </ng-container>
+                        </tab-diagram>
+                    </tabs-diagram>
+
+                    <ng-template let-server="server" #tabDiagramDrawer>
+                        <diagram-drawer [server]="server"></diagram-drawer>
+                    </ng-template>
+
+                    <!-- </div> -->
+
+
+                    <!-- <div class="col-sm-6 col-md-6 "> -->
+
+
+
+                    <!-- </div> -->
+
+
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
