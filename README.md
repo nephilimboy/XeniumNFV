@@ -15,7 +15,7 @@ ToDo (2018.6.11)
 
 ## Feature
 
-1. Eas SDN Network Diagram Creator
+1. Easy SDN Network Diagram Creator
 
 2. Creating custom VNF’s and Host’s
 
