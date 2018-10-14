@@ -1,5 +1,5 @@
 
-# XeniumNFV (This Project Moved to Gitlab and not Supported on Microsoft Github anymore !)
+# XeniumNFV (This Project Moved to Gitlab and not Supported on Microsoft Github anymore ! plz use gitlab link)
 
 https://gitlab.com/nephh/XeniumNFV
 
