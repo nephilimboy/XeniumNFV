@@ -1,5 +1,5 @@
 
-# XeniumNFV (This Project Moved to Gitlab and not Supported on Microsoft Github anymore ! plz use gitlab link)
+# XeniumNFV (This ongoing project is duplicated on Gitlab and features are still being added to contribute to 5G usecases)
 
 https://gitlab.com/nephh/XeniumNFV
 
@@ -7,7 +7,7 @@ ToDo (2018.6.11)
 + Add Veth pairs support (For traffic Shaping and SFlow Agent support) currently support Path Peer -> Critical
 + Add KVM api support (KVM Machines as VNFs), currently only support Docker containers as VNF
 + Add QOS support on GUI
-# Extreme Network Orchestration Web Application
+# XeniumNFV; SDN/NFV orchestrator
 ![alt text](https://img.shields.io/badge/container-ready-green.svg)
 [![](https://images.microbadger.com/badges/image/nephilimboy/xenonetapp.svg)](https://microbadger.com/images/nephilimboy/xenonetapp "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/nephilimboy/xenonetapp.svg)](https://microbadger.com/images/nephilimboy/xenonetapp "Get your own version badge on microbadger.com")
@@ -15,25 +15,27 @@ ToDo (2018.6.11)
 
 ## Feature
 
-1. Easy SDN Network Diagram Creator
+1. Arbitrary SDN Network topology Creator
 
-2. Creating custom VNF’s and Host’s
+2. Custom VNF and Host creation
 
-3. Add Unlimited Main Server
+3. Autonomous NFV infrastructure and SDN network integration
 
-4. Human resource management
+4. Dynamic scenario modification
 
-5. Using SSH to Communicate between Main Servers
+5. Event-driven orchestration   
 
-6. Written in java So it can integrate with ODL
+6. Using SSH to Communicate between Main Servers
 
-7. Can run on any server (Windows or linux) as master Node
+7. Written in java to be easily integrated with ODL
 
-8. Powered by Spring Framework and Hibernate as ORM 
+8. Can run on any server (Windows or linux) as master Node
 
-9. MySQL DB 
+9. Powered by Spring Framework and Hibernate as ORM 
 
-10. Angular 4.3 JS Framework
+10. MySQL DB 
+
+11. Angular 4.3 JS Framework
 
 ## Before development Build Steps
 1. install java 1.8.xxx
