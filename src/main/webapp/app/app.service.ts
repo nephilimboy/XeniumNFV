@@ -12,6 +12,7 @@ export class AppState {
 
   }
 
+  
   // already return a clone of the current state
   get state() {
     return this._state = this._clone(this._state);
