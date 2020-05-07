@@ -8,6 +8,7 @@ import {Component, ViewContainerRef} from '@angular/core';
         <router-outlet name="popup"></router-outlet>
     `
 })
+
 export class AppComponent {
 
     public constructor(private viewContainerRef: ViewContainerRef) {
