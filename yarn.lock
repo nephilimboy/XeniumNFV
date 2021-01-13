@@ -4915,17 +4915,15 @@ jquery-ui-npm@1.12.0:
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/jquery-ui-npm/-/jquery-ui-npm-1.12.0.tgz#3f2cae88195c7d48acf3786cfa900d0403814e4d"
 
-jquery-validation@1.16.0:
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.16.0.tgz#b6e5277ebbd67c1fabab213eb4454eea8a3095ca"
-  dependencies:
-    jquery "^1.7 || ^2.0 || ^3.1"
+jquery-validation@1.19.3:
+  version "1.19.3"
+  resolved "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.19.3.tgz#50b350eba8b02bcfd119ba15f199487b7eb64086"
 
 jquery.maskedinput@1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/jquery.maskedinput/-/jquery.maskedinput-1.4.1.tgz#3ea8f4cdc4eafce7354c27b66a73d0f44defc327"
 
-jquery@3.2.1, jquery@>=1.10, jquery@>=1.8, "jquery@^1.7 || ^2.0 || ^3.1":
+jquery@3.2.1, jquery@>=1.10, jquery@>=1.8:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
