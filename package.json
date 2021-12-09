@@ -85,7 +85,7 @@
     "sockjs-client": "^1.1.4",
     "stompjs": "^2.3.3",
     "summernote": "0.8.3",
-    "swagger-ui": "2.2.10",
+    "swagger-ui": "4.1.2",
     "tether": "1.4.0",
     "to-markdown": "3.1.0",
     "ts-helpers": "1.1.2",
