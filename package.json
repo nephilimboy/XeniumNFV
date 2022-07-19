@@ -74,7 +74,7 @@
     "ngx-infinite-scroll": "^0.5.1",
     "ngx-popover": "^0.0.16",
     "nouislider": "9.2.0",
-    "properties-reader": "^0.0.16",
+    "properties-reader": "^2.2.0",
     "raphael": "2.2.7",
     "redux": "3.6.0",
     "reflect-metadata": "0.1.10",
